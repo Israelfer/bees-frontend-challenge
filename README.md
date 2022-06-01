@@ -11,7 +11,7 @@ Summary: First page for login, and then returning an API.
 
 _Front-end:_ React (create-react-app), CSS, TypeScript, Prettier, Axios
 
-_Performance Test:_ Google Light House
+_Performance Test:_ Google Lighthouse
 
 _Deploy:_ Vercel
 
@@ -43,7 +43,7 @@ A bit of trouble getting the full name for the second screen. Because at first I
 #### What would I do differently?
 
 - In real work, commits would be more separate and frequent. It would be better to break the app build into even smaller parts.
-- The styling would be with styled components (to learn more)
+- The styling would be with CSS Modules or Styled Components (to practice more).
 
 ## Extra Features ⭐
 
