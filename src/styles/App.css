@@ -12,7 +12,8 @@
   background-color: var(--color-primary);
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -25,4 +26,21 @@
 
 .logo:hover {
   transform: rotate(90deg);
+}
+
+@media (max-width: 700px) {
+  .form {
+    padding-top: 80px;
+  }
+  .logo {
+    width: 180px;
+    position: inherit;
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .form {
+    padding: 80px 10px 0;
+  }
 }
