@@ -23,31 +23,32 @@ interface DataProps {
 }
 
 export default function MainPage({ setCondicional, username }: MainPageProps) {
-  const [dataCities, setDataCities] = useState<DataProps[]>([]);
-
-  useEffect(() => {}, [dataCities]);
+  const [data, setData] = useState<DataProps[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getData = () => {
       axios
         .get('https://api.openbrewerydb.org/breweries')
         .then(function (response) {
-          setDataCities(response.data);
-        });
+          setData(response.data);
+        })
+        .finally(() => setIsLoading(false));
     };
 
     getData();
   }, []);
 
   function handleDelete(id: string) {
-    setDataCities(dataCities.filter(data => data.id !== id));
+    setData(data.filter(data => data.id !== id));
   }
 
   return (
     <div className="mainContainer">
       <Header setCondicional={setCondicional} username={username} />
       <main className="main">
-        {!dataCities.length && (
+        {isLoading && <p>Carregando</p>}
+        {!data.length && !isLoading && (
           <div className="reqError">
             <div>
               <h1>Erro de requisição:</h1>
@@ -66,7 +67,7 @@ export default function MainPage({ setCondicional, username }: MainPageProps) {
             />
           </div>
         )}
-        {dataCities.map((item, index) => (
+        {data.map((item, index) => (
           <Card handleDelete={handleDelete} key={index} allInformation={item} />
         ))}
       </main>

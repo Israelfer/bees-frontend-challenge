@@ -11,7 +11,11 @@ function App() {
   if (!condicional) {
     return (
       <div className="container">
-        <Login setCondicional={setCondicional} setUsername={setUsername} />
+        <Login
+          setCondicional={setCondicional}
+          setUsername={setUsername}
+          username={username}
+        />
         <img src={bee} alt="Uma abelha: Logo da Bee" className="logo" />
       </div>
     );
