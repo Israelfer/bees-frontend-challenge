@@ -32,7 +32,6 @@ A bit of trouble getting the full name for the second screen. Because at first I
 
 #### What would I do differently?
 
-- Project creation: with Vite instead of create-react-app.
 - In real work, commits would be more separate and frequent. It would be better to break the app build into even smaller parts.
 - The styling would be with styled components (to learn more)
 

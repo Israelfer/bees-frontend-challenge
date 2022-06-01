@@ -1,9 +1,9 @@
 .mainContainer {
   height: 100vh;
-  background-color: #fffef0;
 }
 
 .main {
+  background-color: #fffef0;
   display: grid;
   gap: 30px;
   grid-template-columns: 30% 30% 30%;
