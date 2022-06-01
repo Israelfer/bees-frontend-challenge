@@ -61,13 +61,13 @@ Enter the project directory and Install the dependencies
 
 ```bash
   bees-frontend-challenge
-  npm install
+  yarn install
 ```
 
 Run the application
 
 ```bash
-  npm start
+  yarn dev
 ```
 
 ## Author
