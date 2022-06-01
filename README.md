@@ -11,6 +11,8 @@ Summary: First page for login, and then returning an API.
 
 _Front-end:_ React (create-react-app), CSS, TypeScript, Prettier, Axios
 
+_Performance Test:_ Google Light House
+
 _Deploy:_ Vercel
 
 ## Screenshots 🖥️
@@ -18,6 +20,8 @@ _Deploy:_ Vercel
 ![Screen One](./src/assets/print-screen1.png?raw=true 'screenshot')
 
 ![Screen Two](./src/assets/print-screen2.png?raw=true 'screenshot')
+
+![Performance](./src/assets/print-performance.png?raw=true 'screenshot')
 
 ## Learnings 📚
 
