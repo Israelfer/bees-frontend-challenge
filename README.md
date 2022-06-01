@@ -3,9 +3,15 @@
 Application made in Reactjs (typescript).
 Summary: First page for login, and then returning an API.
 
+## Online 👀
+
+[bees-frontend-challenge.vercel.app](https://bees-frontend-challenge.vercel.app/)
+
 ## Technologies 🛠️
 
 _Front-end:_ React (create-react-app), CSS, TypeScript, Prettier, Axios
+
+_Deploy:_ Vercel
 
 ## Screenshots 🖥️
 
