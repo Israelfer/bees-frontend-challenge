@@ -1,0 +1,50 @@
+.mainContainer {
+  height: 100vh;
+  background-color: #fffef0;
+}
+
+.main {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 30% 30% 30%;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.reqError {
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  grid-column: 2;
+  text-align: center;
+}
+
+.reqError div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reqError img {
+  width: 300px;
+}
+
+@media (max-width: 1180px) {
+  .main {
+    grid-template-columns: 45% 45%;
+  }
+
+  .reqError {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 750px) {
+  .main {
+    grid-template-columns: 80%;
+  }
+}
