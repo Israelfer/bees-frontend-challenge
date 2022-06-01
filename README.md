@@ -65,8 +65,8 @@ Clone the project
 Enter the project directory and Install the dependencies
 
 ```bash
-  bees-frontend-challenge
-  yarn install
+  cd bees-frontend-challenge
+  yarn
 ```
 
 Run the application
