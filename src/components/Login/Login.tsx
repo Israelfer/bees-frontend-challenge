@@ -23,9 +23,11 @@ export default function Login({
       <input
         type="text"
         name="username"
+        title="Type only alphabetical characters"
         className="inputName"
         placeholder="Full name"
         minLength={6}
+        pattern="[a-zA-Z ]*"
         required
         value={username}
         onChange={e => setUsername(e.target.value)}
