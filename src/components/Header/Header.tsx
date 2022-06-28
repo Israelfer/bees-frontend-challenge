@@ -6,7 +6,7 @@ interface HeaderProps {
   username: string;
 }
 
-export default function Header({ setCondicional, username }: HeaderProps) {
+const Header = ({ setCondicional, username }: HeaderProps) => {
   return (
     <div className="header">
       <div className="goBack">
@@ -29,4 +29,6 @@ export default function Header({ setCondicional, username }: HeaderProps) {
       <p>{username}</p>
     </div>
   );
-}
+};
+
+export default Header;

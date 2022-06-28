@@ -12,7 +12,7 @@ interface TagItemProps {
   phone: string;
 }
 
-export default function TagItem({ type, zip, phone }: TagItemProps) {
+const TagItem = ({ type, zip, phone }: TagItemProps) => {
   const [inputAdd, setInputAdd] = useState('');
   const [inputActive, setInputActive] = useState(true);
   const [typedInput, setTypedInput] = useState(false);
@@ -100,4 +100,6 @@ export default function TagItem({ type, zip, phone }: TagItemProps) {
       </div>
     </div>
   );
-}
+};
+
+export default TagItem;

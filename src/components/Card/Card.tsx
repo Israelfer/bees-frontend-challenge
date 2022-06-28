@@ -3,27 +3,15 @@ import trashIcon from '../../assets/trash.svg';
 import TagItem from './TagItem';
 
 interface CardProps {
-  allInformation: AllInformation;
+  dataApi: DataProps;
   handleDelete: (id: string) => void;
 }
 
-interface AllInformation {
-  id: string;
-  name: string;
-  brewery_type: string;
-  street: string;
-  city: string;
-  state: string;
-  country: string;
-  postal_code: string;
-  phone: string;
-}
-
-export default function Card({ allInformation, handleDelete }: CardProps) {
+const Card = ({ dataApi, handleDelete }: CardProps) => {
   return (
     <div className="cardItem">
       <div>
-        <button onClick={() => handleDelete(allInformation.id)} title="Delete">
+        <button onClick={() => handleDelete(dataApi.id)} title="Delete">
           <img
             src={trashIcon}
             alt="Ícone de lixeira para excluir o card"
@@ -31,22 +19,23 @@ export default function Card({ allInformation, handleDelete }: CardProps) {
           />
         </button>
 
-        <h3 className="cardTitle">{allInformation.name}</h3>
+        <h3 className="cardTitle">{dataApi.name}</h3>
         <p className="cardAddress">
-          {allInformation.street && (
+          {dataApi.street && (
             <>
-              {allInformation.street} <br />
+              {dataApi.street} <br />
             </>
           )}
-          {allInformation.city}, {allInformation.state} -{' '}
-          {allInformation.country}
+          {dataApi.city}, {dataApi.state} - {dataApi.country}
         </p>
       </div>
       <TagItem
-        phone={allInformation.phone}
-        zip={allInformation.postal_code}
-        type={allInformation.brewery_type}
+        phone={dataApi.phone}
+        zip={dataApi.postal_code}
+        type={dataApi.brewery_type}
       />
     </div>
   );
-}
+};
+
+export default Card;

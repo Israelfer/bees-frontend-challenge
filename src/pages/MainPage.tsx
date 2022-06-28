@@ -1,42 +1,30 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import '../styles/MainPage.css';
 import Header from '../components/Header/Header';
 import Card from '../components/Card/Card';
 import Error from '../assets/error.svg';
+import { getData } from '../services/requests';
 
 interface MainPageProps {
   setCondicional: React.Dispatch<React.SetStateAction<boolean>>;
   username: string;
 }
 
-interface DataProps {
-  id: string;
-  name: string;
-  brewery_type: string;
-  street: string;
-  city: string;
-  state: string;
-  country: string;
-  postal_code: string;
-  phone: string;
-}
-
-export default function MainPage({ setCondicional, username }: MainPageProps) {
+const MainPage = ({ setCondicional, username }: MainPageProps) => {
   const [data, setData] = useState<DataProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const getData = () => {
-      axios
-        .get('https://api.openbrewerydb.org/breweries')
-        .then(function (response) {
-          setData(response.data);
-        })
-        .finally(() => setIsLoading(false));
-    };
+  const api = async () => {
+    const { data, erro } = await getData().finally(() => setIsLoading(false));
+    if (data) {
+      setData(data);
+    } else {
+      alert(erro);
+    }
+  };
 
-    getData();
+  useEffect(() => {
+    api();
   }, []);
 
   function handleDelete(id: string) {
@@ -68,9 +56,11 @@ export default function MainPage({ setCondicional, username }: MainPageProps) {
           </div>
         )}
         {data.map((item, index) => (
-          <Card handleDelete={handleDelete} key={index} allInformation={item} />
+          <Card handleDelete={handleDelete} key={index} dataApi={item} />
         ))}
       </main>
     </div>
   );
-}
+};
+
+export default MainPage;

@@ -6,11 +6,7 @@ interface LoginProps {
   username: string;
 }
 
-export default function Login({
-  setCondicional,
-  setUsername,
-  username
-}: LoginProps) {
+const Login = ({ setCondicional, setUsername, username }: LoginProps) => {
   const login = (e: any) => {
     e.preventDefault();
     setCondicional(true);
@@ -26,7 +22,6 @@ export default function Login({
         title="Type only alphabetical characters"
         className="inputName"
         placeholder="Full name"
-        minLength={6}
         pattern="[a-zA-Z ]*"
         required
         value={username}
@@ -45,4 +40,6 @@ export default function Login({
       </div>
     </form>
   );
-}
+};
+
+export default Login;
